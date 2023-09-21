@@ -12,12 +12,63 @@
     <!--Personal-->
     <link rel="stylesheet" href="./css/myStyle.css">
 </head>
-<body>
+<body class="bg-light">
 
-<H1> Welcome to the show!</H1>
+
+<!--Navigation-->
+<nav class="navbar bg-light">
+    <div class="container-fluid d-flex justify-content-center">
+        <a class="navbar-brand">
+            <img src="./img/popcorn.png" alt="Movie Logo"  width="auto" height="32" class="d-inline-block align-text-top">
+            LosMovies
+        </a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img src="./img/add.png" alt="add movie" height="40">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add a movie:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+<div class="py-5 my-5 mx-auto w-75 ">
+    <h3 class="text-center">All Movies</h3>
+    <main class="container d-flex overflow-scroll gap-2"></main>
+</div>
 
 
 </body>
 <!--Bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--keys-->
+<script type="text/javascript" src="./js/keys.js"></script>
+<!--Personal JS -->
+<script type="text/javascript" src="./js/movieApplication.js"></script>
 </html>
