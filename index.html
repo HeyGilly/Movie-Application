@@ -15,53 +15,112 @@
 <body class="bg-light">
 
 
-<!--Navigation-->
-<nav class="navbar bg-light">
-    <div class="container-fluid d-flex justify-content-center">
-        <a class="navbar-brand">
-            <img src="./img/popcorn.png" alt="Movie Logo"  width="auto" height="32" class="d-inline-block align-text-top">
-            LosMovies
-        </a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    <!--Navigation-->
+    <nav class="navbar bg-light">
+        <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand">
+                <img src="./img/popcorn.png" alt="Movie Logo"  width="auto" height="32" class="d-inline-block align-text-top">
+                LosMovies
+            </a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-light ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <img src="./img/add.png" alt="add movie" height="40">
-        </button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="./img/add.png" alt="add movie" height="42" />
+            </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add a movie:</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
-                    </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add a New Movie:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Adding Form-->
+                    <form>
+                        <div class="mb-3">
+                            <label for="movieTitleInput" class="form-label">Title:</label>
+                            <input type="text" class="form-control" id="movieTitleInput" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="movieDirectorInput" class="form-label">Director:</label>
+                            <input type="text" class="form-control" id="movieDirectorInput" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="movieActorInput" class="form-label">Actor:</label>
+                            <input type="text" class="form-control" id="movieActorInput" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="movieYearInput" class="form-label">Year Released:</label>
+                            <input type="number" id="movieYearInput" class="form-control" min="1900" max="2099" step="1" value="2016" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="movieRatingInput" class="form-label">Rating:</label>
+                            <select class="form-select" aria-label="Default select example" id="movieRatingInput">
+                                <option selected disabled>...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="movieGenreInput" class="form-label">Genre:</label>
+                            <select id="movieGenreInput" class="form-select">
+                                <option selected disabled>...</option>
+                                <option>Comedy</option>
+                                <option>Action</option>
+                                <option>Adventure</option>
+                                <option>Fantasy</option>
+                                <option>Drama</option>
+                                <option>Horror</option>
+                                <option>Sci-Fi</option>
+                                <option>Thriller</option>
+                                <option>Crime</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="movieRuntimeInput" class="form-label">Runtime:</label>
+                            <input type="number" id="movieRuntimeInput" class="form-control"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="moviePlotInput" class="form-label">Plot:</label>
+                            <textarea class="form-control" id="moviePlotInput" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="moviePostInput" class="form-label">Poster (https):</label>
+                            <input class="form-control" type="text" id="moviePostInput">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveMovieDetails" data-bs-dismiss="modal">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-</nav>
 
 
 
 
 
-
-<div class="py-5 my-5 mx-auto w-75 ">
-    <h3 class="text-center">All Movies</h3>
-    <main class="container d-flex overflow-scroll gap-2"></main>
-</div>
+    <div class="py-5 my-5 mx-auto ">
+        <h3 class="text-center" id="allMovieHeader">All Movies</h3>
+            <aside class="loader"></aside>
+        <main class="border border-5 container-fluid allMovieList d-flex justify-content-evenly  flex-wrap gap-4 ps-5"></main>
+    </div>
 
 
 </body>
